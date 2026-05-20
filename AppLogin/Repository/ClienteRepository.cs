@@ -1,4 +1,5 @@
 ﻿using AppLogin.Models;
+using AppLogin.Models.Constant;
 using AppLogin.Repository.Contract;
 using MySql.Data.MySqlClient;
 using System.Data;
@@ -58,12 +59,30 @@ namespace AppLogin.Repository
 
         public void Atualizar(Cliente cliente)
         {
-            throw new NotImplementedException();
+            string Situacao = SituacaoConstant.Ativo;
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("update Cliente set Nome = @Nome, Nascimento = @Nascimento, Sexo = @Sexo, CPF = @CPF, " + "Telefone = @Telefone, Email = @Email, Senha = @Senha, Situacao = @Situacao where id = @id", conexao);
+
+                cmd.Parameters.Add("@Id", MySqlDbType.VarChar).Value = cliente.Id;
+                cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = cliente.Nome;
+                cmd.Parameters.Add("Nascimento", MySqlDbType.VarChar).Value = cliente.Nascimento;
+                cmd.Parameters.Add("@Sexo", MySqlDbType.VarChar).Value = cliente.Sexo;
+                cmd.Parameters.Add("@CPF", MySqlDbType.VarChar).Value = cliente.CPF;
+                cmd.Parameters.Add("@Telefone", MySqlDbType.VarChar).Value = cliente.Telefone;
+                cmd.Parameters.Add("@Email", MySqlDbType.VarChar).Value = cliente.Email;
+                cmd.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = cliente.Senha;
+                cmd.Parameters.Add("@Situacao", MySqlDbType.VarChar).Value = cliente.Situacao;
+                cmd.ExecuteNonQuery();
+                conexao.Close();
+            }
         }
 
         public void Cadastrar(Cliente cliente)
         {
-            throw new NotImplementedException();
+            
+
         }
 
         public void Excluir(int id)
@@ -75,7 +94,8 @@ namespace AppLogin.Repository
 
         public void ObterCliente(int id)
         {
-            throw new NotImplementedException();
+            
+            
         }
 
         public IEnumerable<Cliente> ObterTodosClientes()
