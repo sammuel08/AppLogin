@@ -81,8 +81,30 @@ namespace AppLogin.Repository
 
         public void Cadastrar(Cliente cliente)
         {
-            
+            string Situacao = SituacaoConstant.Ativo;
 
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand(
+                    "insert into Cliente(Nome, Nascimento, Sexo, CPF, Telefone, Email, Senha, Situacao) " +
+                    "values (@Nome, @Nascimento, @Sexo, @CPF, @Telefone, @Email, @Senha, @Situacao)",
+                    conexao
+                ); // @: PARAMETRO
+
+                cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = cliente.Nome;
+                cmd.Parameters.Add("@Nascimento", MySqlDbType.DateTime).Value = cliente.Nascimento.ToString("yyyy/MM/dd");
+                cmd.Parameters.Add("@Sexo", MySqlDbType.VarChar).Value = cliente.Sexo;
+                cmd.Parameters.Add("@CPF", MySqlDbType.VarChar).Value = cliente.CPF;
+                cmd.Parameters.Add("@Telefone", MySqlDbType.VarChar).Value = cliente.Telefone;
+                cmd.Parameters.Add("@Email", MySqlDbType.VarChar).Value = cliente.Email;
+                cmd.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = cliente.Senha;
+                cmd.Parameters.Add("@Situacao", MySqlDbType.VarChar).Value = Situacao;
+
+                cmd.ExecuteNonQuery();
+                conexao.Close();
+            }
         }
 
         public void Excluir(int id)
@@ -90,12 +112,43 @@ namespace AppLogin.Repository
             throw new NotImplementedException();
         }
 
-       
 
-        public void ObterCliente(int id)
+
+        public Cliente ObterCliente(int Id)
         {
-            
-            
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+
+                MySqlCommand cmd = new MySqlCommand(
+                    "select * from Cliente WHERE Id=@Id",
+                    conexao
+                );
+
+                cmd.Parameters.AddWithValue("@Id", Id);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataReader dr;
+
+                Cliente cliente = new Cliente();
+
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                while (dr.Read())
+                {
+                    cliente.Id = (Int32)(dr["Id"]);
+                    cliente.Nome = (string)(dr["Nome"]);
+                    cliente.Nascimento = (DateTime)(dr["Nascimento"]);
+                    cliente.Sexo = (string)(dr["Sexo"]);
+                    cliente.CPF = (string)(dr["CPF"]);
+                    cliente.Telefone = (string)(dr["Telefone"]);
+                    cliente.Email = (string)(dr["Email"]);
+                    cliente.Senha = (string)(dr["Senha"]);
+                    cliente.Situacao = (string)(dr["Situacao"]);
+                }
+
+                return cliente;
+            }
         }
 
         public IEnumerable<Cliente> ObterTodosClientes()
@@ -135,6 +188,11 @@ namespace AppLogin.Repository
         }
 
         public IPagedList<Cliente> ObterTodosClientes(int? pagina, string pesquisa)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IClienteRepository.ObterCliente(int id)
         {
             throw new NotImplementedException();
         }
