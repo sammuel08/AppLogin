@@ -14,7 +14,7 @@ namespace AppLogin.Repository.Contract
         void AtualizarSenha(Colaborador colaborador);
         void Excluir(int id);
 
-        Colaborador ObterColaborardor(int id);
+        Colaborador ObterColaborador(int Id);
 
         List<Colaborador> ObterTodosColaboradorPorEmail(string email);
         IEnumerable<Colaborador> ObterTodosColaboradores();
