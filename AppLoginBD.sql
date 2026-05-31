@@ -21,3 +21,9 @@ create table Colaborador(
   Senha Varchar(8) not null,
   Tipo Varchar(8) not null
 );
+
+INSERT INTO Cliente
+(Nome, Nascimento, Sexo, CPF, Telefone, Email, Senha, ConfirmacaoSenha, Situacao)
+VALUES
+('Sammuel', '2008-08-13', 'M', '12345678900',
+'11999999999', 'sammuel10@teste.com', '123456','123456', 'A');

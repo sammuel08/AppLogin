@@ -1,0 +1,10 @@
+C:\Users\Sammuel\Desktop\Nova pasta (2)\AppLogin\obj\Debug\net8.0\AppLogin.csproj.AssemblyReference.cache
+C:\Users\Sammuel\Desktop\Nova pasta (2)\AppLogin\obj\Debug\net8.0\AppLogin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sammuel\Desktop\Nova pasta (2)\AppLogin\obj\Debug\net8.0\AppLogin.AssemblyInfoInputs.cache
+C:\Users\Sammuel\Desktop\Nova pasta (2)\AppLogin\obj\Debug\net8.0\AppLogin.AssemblyInfo.cs
+C:\Users\Sammuel\Desktop\Nova pasta (2)\AppLogin\obj\Debug\net8.0\AppLogin.csproj.CoreCompileInputs.cache
+C:\Users\Sammuel\Desktop\Nova pasta (2)\AppLogin\obj\Debug\net8.0\AppLogin.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Sammuel\Desktop\Nova pasta (2)\AppLogin\obj\Debug\net8.0\AppLogin.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Sammuel\Desktop\Nova pasta (2)\AppLogin\obj\Debug\net8.0\AppLogin.RazorAssemblyInfo.cache
+C:\Users\Sammuel\Desktop\Nova pasta (2)\AppLogin\obj\Debug\net8.0\AppLogin.RazorAssemblyInfo.cs
+C:\Users\Sammuel\Desktop\Nova pasta (2)\AppLogin\obj\Debug\net8.0\AppLogin.sourcelink.json
