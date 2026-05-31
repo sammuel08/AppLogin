@@ -25,9 +25,6 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
-                        </li>
                     </ul>
                     <li class="nav-item dropdown" style="list-style:none">
     @if (_loginCliente.GetCliente() != null)
@@ -41,7 +38,7 @@
 
             <li><hr class="dropdown-divider" /></li>
 
-            <li> <a class="dropdown-item" href="/Home/LogoutCliente">Sair</a></li>
+            <li> <a class="dropdown-item" href="/Home/Logout">Sair</a></li>
         </ul>
     }
     else

@@ -8,6 +8,7 @@ namespace AppLogin.Controllers
 {
     public class HomeController : Controller
     {
+        
         private IClienteRepository _clienteRepository;
         private LoginCliente _loginCliente;
 
@@ -16,7 +17,8 @@ namespace AppLogin.Controllers
             _clienteRepository = clienteRepository;
             _loginCliente = loginCliente;
         }
-       
+        
+
 
         [HttpGet]
         public IActionResult Login()
