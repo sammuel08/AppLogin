@@ -15,6 +15,8 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v9.0
 build_property.RootNamespace = AppLogin
 build_property.RootNamespace = AppLogin
 build_property.ProjectDir = C:\Users\3MTEC\Desktop\Nova pasta\AppLogin\
@@ -46,6 +48,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/3MTEC/Desktop/Nova pasta/AppLogin/Areas/Colaborador/Views/Home/PainelGerente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29sYWJvcmFkb3JcVmlld3NcSG9tZVxQYWluZWxHZXJlbnRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/3MTEC/Desktop/Nova pasta/AppLogin/Areas/Colaborador/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29sYWJvcmFkb3JcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/3MTEC/Desktop/Nova pasta/AppLogin/Areas/Colaborador/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29sYWJvcmFkb3JcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/3MTEC/Desktop/Nova pasta/AppLogin/Areas/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/3MTEC/Desktop/Nova pasta/AppLogin/Views/Home/Index.cshtml]
